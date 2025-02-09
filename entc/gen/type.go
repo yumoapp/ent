@@ -1617,7 +1617,7 @@ func (f Field) Column() *schema.Column {
 }
 
 // incremental returns if the column has an incremental behavior.
-// If no value is defined externally, we use a provided def flag
+// If no value is defined externally, we use a provided def flag.
 func (f Field) incremental(def bool) bool {
 	if ant := f.EntSQL(); ant != nil && ant.Incremental != nil {
 		return *ant.Incremental
@@ -2298,6 +2298,7 @@ var (
 		"Max",
 		"Mean",
 		"Min",
+		"Schema",
 		"Sum",
 		"Policy",
 		"Query",
